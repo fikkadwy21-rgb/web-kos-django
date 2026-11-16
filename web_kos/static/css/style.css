@@ -1,7 +1,18 @@
-﻿body { font-family: system-ui, sans-serif; background: #f1f5f9; margin: 0; color: #1e293b; }
-.navbar { background: #1e3a8a; color: white; padding: 1rem 2rem; }
-.navbar h1 { margin: 0; font-size: 1.25rem; }
-.container { max-width: 1000px; margin: 2rem auto; padding: 0 1rem; }
+﻿html { scroll-behavior: smooth; }
+body { font-family: system-ui, -apple-system, sans-serif; background: #f1f5f9; margin: 0; color: #1e293b; display: flex; flex-direction: column; min-height: 100vh; }
+
+/* Navbar */
+.navbar { background: #1e3a8a; color: white; box-shadow: 0 2px 8px rgba(0,0,0,0.12); position: sticky; top: 0; z-index: 100; }
+.nav-container { max-width: 1000px; margin: 0 auto; padding: 0.9rem 1rem; display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 0.75rem; }
+.nav-brand { color: white; text-decoration: none; font-size: 1.3rem; font-weight: 700; letter-spacing: -0.3px; }
+.nav-brand span { color: #93c5fd; font-weight: 500; }
+.nav-menu { list-style: none; margin: 0; padding: 0; display: flex; align-items: center; gap: 1.25rem; }
+.nav-menu a { color: #e2e8f0; text-decoration: none; font-size: 0.95rem; font-weight: 500; transition: color 0.2s; }
+.nav-menu a:hover, .nav-menu a.active { color: #ffffff; border-bottom: 2px solid #60a5fa; padding-bottom: 2px; }
+.nav-badge { background: rgba(255, 255, 255, 0.15); padding: 0.3rem 0.7rem; border-radius: 999px; font-size: 0.8rem; color: #dbeafe; }
+
+/* Layout Utama */
+.container { max-width: 1000px; width: 100%; margin: 2rem auto; padding: 0 1rem; box-sizing: border-box; flex: 1; }
 .grid { display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; }
 .card { background: white; padding: 1.5rem; border-radius: 10px; box-shadow: 0 2px 6px rgba(0,0,0,0.08); }
 .form-group { margin-bottom: 1rem; }
@@ -11,4 +22,8 @@ input, select { width: 100%; padding: 0.6rem; border: 1px solid #cbd5e1; border-
 .btn:hover { background: #1d4ed8; }
 .result-box { margin-top: 1.5rem; padding: 1rem; background: #dcfce7; border-left: 4px solid #16a34a; border-radius: 6px; }
 .price { font-size: 1.4rem; font-weight: bold; color: #15803d; margin: 0.3rem 0 0; }
+
+/* Footer */
+.footer { text-align: center; padding: 1.25rem; background: #e2e8f0; color: #475569; font-size: 0.85rem; margin-top: 2rem; }
+
 @media (max-width: 768px) { .grid { grid-template-columns: 1fr; } }

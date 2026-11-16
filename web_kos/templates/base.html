@@ -9,12 +9,27 @@
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </head>
 <body>
-    <header class="navbar">
-        <h1>Sistem Cerdas — Prediksi Harga Kos Madiun</h1>
-    </header>
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="{% url 'prediksi:index' %}" class="nav-brand">
+                KosPredict <span>Madiun</span>
+            </a>
+            <ul class="nav-menu">
+                <li><a href="{% url 'prediksi:index' %}" class="active">Prediksi Harga</a></li>
+                <li><a href="#grafik-section">Statistik AC</a></li>
+                <li><span class="nav-badge">Sistem Cerdas • TI PNM</span></li>
+            </ul>
+        </div>
+    </nav>
+
     <main class="container">
         {% block content %}{% endblock %}
     </main>
+
+    <footer class="footer">
+        <p>Proyek Sistem Cerdas (TI24317) — Fikka Dwy Ayu Nur Mutoharoh (253307034 / 2B)</p>
+    </footer>
+
     {% block scripts %}{% endblock %}
 </body>
 </html>
