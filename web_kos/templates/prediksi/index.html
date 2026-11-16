@@ -1,0 +1,51 @@
+﻿{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+<div class="grid">
+    <section class="card">
+        <h2>Form Prediksi Harga Kos</h2>
+        <form method="POST">
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="jarak_km">Jarak ke Kampus (km):</label>
+                <input type="number" step="0.1" min="0.1" max="10.0" id="jarak_km" name="jarak_km" value="{{ input_user.jarak_km }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rating">Rating Kos (1.0 - 5.0):</label>
+                <input type="number" step="0.1" min="1.0" max="5.0" id="rating" name="rating" value="{{ input_user.rating }}" required>
+            </div>
+
+            <div class="form-group">
+                <label for="ac">Fasilitas AC:</label>
+                <select id="ac" name="ac">
+                    <option value="ya" {% if input_user.ac == "ya" %}selected{% endif %}>Ya</option>
+                    <option value="tidak" {% if input_user.ac == "tidak" %}selected{% endif %}>Tidak</option>
+                </select>
+            </div>
+
+            <button type="submit" class="btn">Prediksi Harga</button>
+        </form>
+
+        {% if hasil_prediksi is not None %}
+        <div class="result-box">
+            <strong>Perkiraan Harga Sewa:</strong>
+            <p class="price">Rp {{ hasil_prediksi }} ribu / bulan</p>
+        </div>
+        {% endif %}
+    </section>
+
+    <section class="card">
+        <h2>Rata-Rata Harga Kos Berdasarkan AC</h2>
+        <canvas id="acChart"></canvas>
+    </section>
+</div>
+
+{{ chart_labels|json_script:"ac-labels" }}
+{{ chart_values|json_script:"ac-values" }}
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'js/chart_ac.js' %}"></script>
+{% endblock %}
