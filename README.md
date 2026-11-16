@@ -5,7 +5,7 @@ Aplikasi web berbasis Django dan Machine Learning (Linear Regression) untuk memp
 ## Identitas Pengembang (Pengerjaan Mandiri)
 - Nama: Fikka Dwy Ayu Nur Mutoharoh
 - NIM: 253307034
-- Kelas: 2B - D3 Teknologi Informasi, Politeknik Negeri Madiun
+- Kelas: 3B - D3 Teknologi Informasi, Politeknik Negeri Madiun
 - Mata Kuliah: Sistem Cerdas (TI24317)
 - Ruang Lingkup: Perancangan arsitektur proyek, pelatihan & pembekuan model ML (joblib), pengembangan backend layanan prediksi (services.py), antarmuka pengguna & grafik (Chart.js), serta dokumentasi.
 
