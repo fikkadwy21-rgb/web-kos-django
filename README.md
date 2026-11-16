@@ -51,4 +51,5 @@ Aplikasi web berbasis Django dan Machine Learning (Linear Regression) untuk memp
    python manage.py runserver
 
 5. Buka browser dan akses http://127.0.0.1:8000/
+
    Jika di terminal Vs Code ketik : python manage.py runserver
